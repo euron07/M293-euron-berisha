@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #8b5a2b;
+    color: #5a3e1b;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2% auto;
+    background: #fff3e0;
+    padding: 2%;
+    border-radius: 1%;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+}
+
+header {
+    background: #8b5a2b;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    border-radius: 10px 10px 0 0;
+}
+
+h2 {
+    color: #6a3d1a;
+}
+
+h1 {
+    color: white;
+}
+
+.intro, .ingredients, .preparation, .related {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    background: #fff;
+}
+
+th, td {
+    border: 1px solid #d2a679;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #b5651d;
+    color: white;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+img {
+    width: 50%;
+    max-height: 50%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px 0;
+    margin-left: 25%;
+}
+
+.links a {
+    display: block;
+    margin-top: 5px;
+    color: #8b4513;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
