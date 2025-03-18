@@ -1,1 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #df2222;
+    color: white;
+    margin: 0;
+    padding: 2rem;
+    text-align: center;
+}
 
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.film-container {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+.film-slider {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+}
+
+.film-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.film {
+    background: #1f1f1f;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    min-width: 15rem; 
+    flex: 0 0 auto;
+}
+
+.film:hover {
+    transform: scale(1.05);
+}
+
+.film img {
+    width: 100%;
+    height: 15rem; 
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.film h2 a {
+    text-decoration: none;
+    color: #e50914;
+    font-size: 1.4rem;
+}
+
+.film h2 a:hover {
+    text-decoration: underline;
+}
+
+.film p {
+    color: #b3b3b3;
+    font-size: 1rem;
+}
