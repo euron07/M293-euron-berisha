@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ComicShop – Produkte</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>ComicShop</h1>
+      <nav>
+        <a href="index.html">Start</a>
+        <a href="products.html">Produkte</a>
+        <a href="contact.html">Kontakt</a>
+        <a href="#" onclick="openCart()"
+          >Warenkorb <span id="cart-count">0</span></a
+        >
+      </nav>
+    </header>
+
+    <main>
+      <section class="wrapper">
+        <h2>Alle Comics</h2>
+        <label for="category-filter">Filter nach Kategorie:</label>
+        <select id="category-filter" onchange="filterByCategory()">
+          <option value="all">Alle</option>
+          <option value="superhelden">Superhelden</option>
+          <option value="manga">Manga</option>
+          <option value="scifi">Science Fiction</option>
+          <option value="fantasy">Fantasy</option>
+        </select>
+      </section>
+
+      <section class="grid" id="product-grid">
+        <div class="card" data-category="superhelden">
+          <img
+            src="https://images.thalia.media/-/BF2000-2000/1191878782aa487d85cd3c5c2154883c/spider-man-blue-epub-jeph-loeb.jpeg"
+            alt="Spider-Man: Blue"
+          />
+          <div class="card-content">
+            <h2>Spider-Man: Blue</h2>
+            <p class="price">10.99 CHF</p>
+            <a
+              href="produkt-detail.html?title=Spider-Man:%20Blue&price=10.99&image=https://images.thalia.media/-/BF2000-2000/1191878782aa487d85cd3c5c2154883c/spider-man-blue-epub-jeph-loeb.jpeg&desc=Ein%20emotionaler%20Rückblick%20auf%20Spider-Mans%20früheste%20Liebesgeschichte.&author=Jeph%20Loeb"
+              ><button>Mehr erfahren</button></a
+            >
+            <button onclick="addToCart('Spider-Man: Blue', 10.99)">
+              In den Warenkorb
+            </button>
+          </div>
+        </div>
+
+        <div class="card" data-category="superhelden">
+          <img
+            src="https://www.studioremarkable.com/wp-content/uploads/2012/07/Batman-Year-One.jpg"
+            alt="Batman: Year One"
+          />
+          <div class="card-content">
+            <h2>Batman: Year One</h2>
+            <p class="price">12.99 CHF</p>
+            <a
+              href="produkt-detail.html?title=Batman:%20Year%20One&price=12.99&image=https://www.studioremarkable.com/wp-content/uploads/2012/07/Batman-Year-One.jpg&desc=Ein%20Klassiker%20von%20Frank%20Miller,%20der%20Batmans%20erste%20Jahre%20beleuchtet.&author=Frank%20Miller"
+              ><button>Mehr erfahren</button></a
+            >
+            <button onclick="addToCart('Batman: Year One', 12.99)">
+              In den Warenkorb
+            </button>
+          </div>
+        </div>
+
+        <div class="card" data-category="manga">
+          <img
+            src="https://images.thalia.media/07/-/9fe20b5191df4e91bc66be171096fafc/naruto-massiv-1-taschenbuch-masashi-kishimoto.jpeg"
+            alt="Naruto Band 1"
+          />
+          <div class="card-content">
+            <h2>Naruto Band 1</h2>
+            <p class="price">8.99 CHF</p>
+            <a
+              href="produkt-detail.html?title=Naruto%20Band%201&price=8.99&image=https://images.thalia.media/07/-/9fe20b5191df4e91bc66be171096fafc/naruto-massiv-1-taschenbuch-masashi-kishimoto.jpeg&desc=Der%20Beginn%20von%20Narutos%20Reise%20zum%20Hokage.&author=Masashi%20Kishimoto"
+              ><button>Mehr erfahren</button></a
+            >
+            <button onclick="addToCart('Naruto Band 1', 8.99)">
+              In den Warenkorb
+            </button>
+          </div>
+        </div>
+
+        <div class="card" data-category="manga">
+          <img
+            src="https://images.thalia.media/07/-/92f21c38e2d442369a1e0dfaf70395cd/one-piece-vol-1-taschenbuch-eiichiro-oda.jpeg"
+            alt="One Piece Vol. 1"
+          />
+          <div class="card-content">
+            <h2>One Piece Vol. 1</h2>
+            <p class="price">9.99 CHF</p>
+            <a
+              href="produkt-detail.html?title=One%20Piece%20Vol.%201&price=9.99&image=https://images.thalia.media/07/-/92f21c38e2d442369a1e0dfaf70395cd/one-piece-vol-1-taschenbuch-eiichiro-oda.jpeg&desc=Ruffys%20erstes%20Abenteuer%20auf%20dem%20Weg%20zum%20Piratenkönig.&author=Eiichiro%20Oda"
+              ><button>Mehr erfahren</button></a
+            >
+            <button onclick="addToCart('One Piece Vol. 1', 9.99)">
+              In den Warenkorb
+            </button>
+          </div>
+        </div>
+
+        <div class="card" data-category="scifi">
+          <img
+            src="https://images.thalia.media/-/BF2000-2000/a944d5793dbb4aeea73e25f185fbc0eb/watchmen-taschenbuch-alan-moore.jpeg"
+            alt="Watchmen"
+          />
+          <div class="card-content">
+            <h2>Watchmen</h2>
+            <p class="price">16.49 CHF</p>
+            <a
+              href="produkt-detail.html?title=Watchmen&price=16.49&image=https://images.thalia.media/-/BF2000-2000/a944d5793dbb4aeea73e25f185fbc0eb/watchmen-taschenbuch-alan-moore.jpeg&desc=Eine%20düstere%20Alternativwelt%20voller%20maskierter%20Helden.&author=Alan%20Moore"
+              ><button>Mehr erfahren</button></a
+            >
+            <button onclick="addToCart('Watchmen', 16.49)">
+              In den Warenkorb
+            </button>
+          </div>
+        </div>
+
+        <div class="card" data-category="superhelden">
+          <img
+            src="https://images.thalia.media/-/BF2000-2000/d0a22eb6e5654bcf9ab032aba0a2fc8c/marvel-must-have-iron-man-extremis-gebundene-ausgabe-warren-ellis.jpeg"
+            alt="Iron Man: Extremis"
+          />
+          <div class="card-content">
+            <h2>Iron Man: Extremis</h2>
+            <p class="price">13.99 CHF</p>
+            <a
+              href="produkt-detail.html?title=Iron%20Man:%20Extremis&price=13.99&image=https://images.thalia.media/-/BF2000-2000/d0a22eb6e5654bcf9ab032aba0a2fc8c/marvel-must-have-iron-man-extremis-gebundene-ausgabe-warren-ellis.jpeg&desc=Eine%20neue%20Bedrohung%20für%20Tony%20Stark%20fordert%20alles%20von%20seinem%20Anzug.&author=Warren%20Ellis"
+              ><button>Mehr erfahren</button></a
+            >
+            <button onclick="addToCart('Iron Man: Extremis', 13.99)">
+              In den Warenkorb
+            </button>
+          </div>
+        </div>
+
+        <div class="card" data-category="fantasy">
+          <img
+            src="https://m.media-amazon.com/images/I/81+7Wj+YYkL.jpg"
+            alt="The Sandman Vol. 1"
+          />
+          <div class="card-content">
+            <h2>The Sandman Vol. 1</h2>
+            <p class="price">14.99 CHF</p>
+            <a
+              href="produkt-detail.html?title=The%20Sandman%20Vol.%201&price=14.99&image=https://m.media-amazon.com/images/I/81+7Wj+YYkL.jpg&desc=Die%20Reise%20von%20Dream%20durch%20die%20Welt%20der%20Träume.&author=Neil%20Gaiman"
+              ><button>Mehr erfahren</button></a
+            >
+            <button onclick="addToCart('The Sandman Vol. 1', 14.99)">
+              In den Warenkorb
+            </button>
+          </div>
+        </div>
+
+        <div class="card" data-category="manga">
+          <img
+            src="https://m.media-amazon.com/images/I/91F-m3Zm1xL._UF1000,1000_QL80_.jpg"
+            alt="Attack on Titan Vol. 1"
+          />
+          <div class="card-content">
+            <h2>Attack on Titan Vol. 1</h2>
+            <p class="price">9.49 CHF</p>
+            <a
+              href="produkt-detail.html?title=Attack%20on%20Titan%20Vol.%201&price=9.49&image=https://m.media-amazon.com/images/I/91F-m3Zm1xL._UF1000,1000_QL80_.jpg&desc=Die%20letzte%20Festung%20der%20Menschheit%20gegen%20die%20Titanen.&author=Hajime%20Isayama"
+              ><button>Mehr erfahren</button></a
+            >
+            <button onclick="addToCart('Attack on Titan Vol. 1', 9.49)">
+              In den Warenkorb
+            </button>
+          </div>
+        </div>
+
+        <div class="card" data-category="scifi">
+          <img
+            src="https://images.thalia.media/-/BF2000-2000/96e6db27a466406fb223f9f558ba4e45/guardians-of-the-galaxy-1-pdf-brian-michael-bendis.jpeg"
+            alt="Guardians of the Galaxy"
+          />
+          <div class="card-content">
+            <h2>Guardians of the Galaxy</h2>
+            <p class="price">11.99 CHF</p>
+            <a
+              href="produkt-detail.html?title=Guardians%20of%20the%20Galaxy&price=11.99&image=https://images.thalia.media/-/BF2000-2000/96e6db27a466406fb223f9f558ba4e45/guardians-of-the-galaxy-1-pdf-brian-michael-bendis.jpeg&desc=Eine%20verrückte%20Gruppe%20rettet%20das%20Universum.&author=Brian%20Michael%20Bendis"
+              ><button>Mehr erfahren</button></a
+            >
+            <button onclick="addToCart('Guardians of the Galaxy', 11.99)">
+              In den Warenkorb
+            </button>
+          </div>
+        </div>
+
+        <div class="card" data-category="superhelden">
+          <img
+            src="https://cdn.marvel.com/u/prod/marvel/i/mg/c/10/633cede092ec0/clean.jpg"
+            alt="Black Panther Vol. 1"
+          />
+          <div class="card-content">
+            <h2>Black Panther Vol. 1</h2>
+            <p class="price">12.49 CHF</p>
+            <a
+              href="produkt-detail.html?title=Black%20Panther%20Vol.%201&price=12.49&image=https://cdn.marvel.com/u/prod/marvel/i/mg/c/10/633cede092ec0/clean.jpg&desc=Ein%20König%20stellt%20sich%20seinen%20Herausforderungen%20in%20Wakanda.&author=Ta-Nehisi%20Coates"
+              ><button>Mehr erfahren</button></a
+            >
+            <button onclick="addToCart('Black Panther Vol. 1', 12.49)">
+              In den Warenkorb
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 ComicShop – Alle Rechte vorbehalten</p>
+    </footer>
+
+    <div id="cart-modal" class="hidden">
+      <span id="close-cart" onclick="closeCart()">✖</span>
+      <h3>🛒 Dein Warenkorb</h3>
+      <ul id="cart-items"></ul>
+      <span id="cart-total">Gesamt: 0.00 CHF</span>
+      <button onclick="checkout()">Jetzt kaufen</button>
+    </div>
+
+    <script src="cart.js"></script>
+    <script>
+      function openCart() {
+        showCartModal();
+      }
+
+      function filterByCategory() {
+        const selected = document.getElementById('category-filter').value;
+        document.querySelectorAll('.card').forEach((card) => {
+          const category = card.getAttribute('data-category');
+          card.style.display =
+            selected === 'all' || category === selected ? 'block' : 'none';
+        });
+      }
+    </script>
+  </body>
+</html>
