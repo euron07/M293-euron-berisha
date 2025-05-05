@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- index.html -->
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ComicShop – Startseite</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>ComicShop</h1>
+    <nav>
+      <a href="index.html">Start</a>
+      <a href="products.html">Produkte</a>
+      <a href="contact.html">Kontakt</a>
+      <a href="#" onclick="openCart()">Warenkorb <span id="cart-count">0</span></a>
+    </nav>
+  </header>
+  <main>
+    <section class="wrapper">
+      <h2>Willkommen in der Welt der Comics! 💥</h2>
+      <p style="max-width:700px; margin: 0 auto; text-align:center;">
+        Entdecke fantastische Geschichten, epische Helden und unvergessliche Abenteuer – unser ComicShop bringt dir das Beste aus Superhelden, Manga und Graphic Novels direkt nach Hause!
+      </p>
+    </section>
+    <section class="wrapper">
+      <h2>Neueste Comics</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="https://images.thalia.media/-/BF2000-2000/1191878782aa487d85cd3c5c2154883c/spider-man-blue-epub-jeph-loeb.jpeg" alt="Spider-Man" />
+          <div class="card-content">
+            <h2>Spider-Man: Blue</h2>
+            <p>Emotionales Meisterwerk mit Peter & Gwen.</p>
+            <p class="price">10.99 CHF</p>
+            <a href="produkt-detail.html?title=Spider-Man:%20Blue&price=10.99&image=https://images.thalia.media/-/BF2000-2000/1191878782aa487d85cd3c5c2154883c/spider-man-blue-epub-jeph-loeb.jpeg&desc=Ein%20emotionaler%20Rückblick%20auf%20Spider-Mans%20früheste%20Liebesgeschichte.&author=Jeph%20Loeb">
+              <button>Mehr erfahren</button>
+            </a>
+            <button onclick="addToCart('Spider-Man: Blue', 10.99)">In den Warenkorb</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://www.studioremarkable.com/wp-content/uploads/2012/07/Batman-Year-One.jpg" alt="Batman" />
+          <div class="card-content">
+            <h2>Batman: Year One</h2>
+            <p>Batmans düsterer Ursprung – neu erzählt.</p>
+            <p class="price">12.99 CHF</p>
+            <a href="produkt-detail.html?title=Batman:%20Year%20One&price=12.99&image=https://www.studioremarkable.com/wp-content/uploads/2012/07/Batman-Year-One.jpg&desc=Ein%20Klassiker%20von%20Frank%20Miller,%20der%20Batmans%20erste%20Jahre%20beleuchtet.&author=Frank%20Miller">
+              <button>Mehr erfahren</button>
+            </a>
+            <button onclick="addToCart('Batman: Year One', 12.99)">In den Warenkorb</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="wrapper">
+      <h2>Unsere Kategorien</h2>
+      <ul class="category-list">
+        <li>🦸 Superhelden</li>
+        <li>📖 Manga</li>
+        <li>🚀 Science Fiction</li>
+        <li>🧝 Fantasy</li>
+      </ul>
+      
+    </section>
+    <section class="wrapper">
+      <h2>📬 Newsletter abonnieren</h2>
+      <p style="text-align: center;">Verpasse keine Neuerscheinungen & Aktionen!</p>
+      <form id="newsletter" onsubmit="subscribe(event)">
+        <input type="email" id="newsletter-email" placeholder="Deine E-Mail" required />
+        <button type="submit">Abonnieren</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 ComicShop – Alle Rechte vorbehalten</p>
+  </footer>
+  <div id="cart-modal" class="hidden">
+    <span id="close-cart" onclick="closeCart()">✖</span>
+    <h3>🛒 Dein Warenkorb</h3>
+    <ul id="cart-items"></ul>
+    <span id="cart-total">Gesamt: 0.00 CHF</span>
+    <button onclick="checkout()">Jetzt kaufen</button>
+  </div>
+  <script src="cart.js"></script>
+  <script>
+    function openCart() {
+      showCartModal();
+    }
+    function subscribe(event) {
+      event.preventDefault();
+      const email = document.getElementById("newsletter-email").value;
+      if (email) {
+        alert(`Vielen Dank fürs Abonnieren, ${email}!`);
+        document.getElementById("newsletter").reset();
+      }
+    }
+  </script>
+</body>
+</html>

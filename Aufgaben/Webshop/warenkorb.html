@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warenkorb</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>🛒 Dein Warenkorb</h1>
+        <nav>
+            <a href="index.html">🏠 Home</a>
+            <a href="produkte.html">🦸 Produkte</a>
+            <a href="kontakt.html">📞 Kontakt</a>
+            <a href="warenkorb.html">🛒 Warenkorb (<span id="cart-count">0</span>)</a>
+        </nav>        
+    </header>
+
+    <main>
+        <div id="cart-container"></div>
+        <button onclick="clearCart()">🗑️ Warenkorb leeren</button>
+    </main>
+
+    <script>
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let cartContainer = document.getElementById("cart-container");
+            cartContainer.innerHTML = cart.length > 0 ? cart.map(item => 
+                `<p>${item.name} - ${item.price}€</p>`).join("") : "<p>Dein Warenkorb ist leer.</p>";
+        }
+
+        function clearCart() {
+            localStorage.removeItem("cart");
+            loadCart();
+        }
+
+        loadCart();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

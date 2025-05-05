@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestellung abschließen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>💳 Bestellung abschließen</h1>
+    </header>
+
+    <main>
+        <form id="order-form">
+            <label>Name:</label>
+            <input type="text" required>
+
+            <label>Adresse:</label>
+            <input type="text" required>
+
+            <label>Zahlungsmethode:</label>
+            <select>
+                <option>Kreditkarte</option>
+                <option>PayPal</option>
+                <option>Rechnung</option>
+            </select>
+
+            <button type="submit">Jetzt kaufen</button>
+        </form>
+    </main>
+
+    <script>
+        document.getElementById("order-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Danke für deine Bestellung! 🎉");
+            localStorage.removeItem("cart");
+            window.location.href = "index.html";
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
